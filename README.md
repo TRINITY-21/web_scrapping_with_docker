@@ -41,3 +41,5 @@ docker-compose run <docker-image-name> python manage.py migrate
 ```
 docker-compose run <docker-image-name> python api.py
 ```
+
+HAPPY CODING (^^)
