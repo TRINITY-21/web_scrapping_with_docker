@@ -18,13 +18,14 @@
 ## Instructions To Follow
 
 1. Clone the project
+2. cd into the project
 2. Download and install docker on either mac os or windows
 3. Follow the next command in the terminal
 
 ## Running Docker Compose
 
 ```
-docker-compose up —build
+docker-compose up --build
 ```
 
 ## Running migrations
@@ -32,14 +33,14 @@ docker-compose up —build
 Open a new terminal and run:
 
 ```
-docker-compose run <docker-image-name> python manage.py makemigrations
-docker-compose run <docker-image-name> python manage.py migrate
+docker-compose run <docker-dir-name> python manage.py makemigrations
+docker-compose run <docker-dir-name> python manage.py migrate
 ```
 
 ## Scrape the site information using this command
 
 ```
-docker-compose run <docker-image-name> python api.py
+docker-compose run <docker-dir-name> python api.py
 ```
 
 HAPPY CODING (^^)
