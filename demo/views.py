@@ -6,7 +6,7 @@ from django.db.models import Sum, Count
 
 from .models import Loan, Sector, Country
 from .serializers import LoanSerializer, CountrySerializer, SectorSerializer
-from .excel_service import generate_excel_sheet
+from .services import generate_excel_sheet
 
 
 class ListCountryView(ListAPIView):

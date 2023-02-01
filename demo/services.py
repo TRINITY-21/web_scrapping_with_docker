@@ -60,7 +60,6 @@ def generate_excel_sheet(input_data, by_year, by_country, by_sector):
 
     # Adding chart
     chart = workbook.add_chart({"type": "column"})
-    chart2 = workbook.add_chart({"type": "column"})
 
     # data for hidden sheet to be used for the chart series
     agg_by_year = [
@@ -84,7 +83,7 @@ def generate_excel_sheet(input_data, by_year, by_country, by_sector):
             "name": "DataAggregationbyyear",
             "columns": [
                 {"header": "Year"},
-                {"header": "Loan Amount", "format": format_amount_table},
+                {"header": "Signed Amount", "format": format_amount_table},
                 {"header": "Quantity"},
             ],
         },
@@ -97,7 +96,7 @@ def generate_excel_sheet(input_data, by_year, by_country, by_sector):
             "name": "DataAggregationbycountry",
             "columns": [
                 {"header": "Country"},
-                {"header": "Loan Amount", "format": amount_format},
+                {"header": "Signed Amount", "format": amount_format},
                 {"header": "Quantity"},
             ],
         },
@@ -110,7 +109,7 @@ def generate_excel_sheet(input_data, by_year, by_country, by_sector):
             "name": "DataAggregationbySector",
             "columns": [
                 {"header": "Country"},
-                {"header": "Loan Amount", "format": amount_format},
+                {"header":"Signed Amount", "format": amount_format},
                 {"header": "Quantity"},
             ],
         },
@@ -146,7 +145,7 @@ def generate_excel_sheet(input_data, by_year, by_country, by_sector):
 
     # setting addition info
     chart.set_size({"width": 750})
-    chart.set_title({"name": "Total Loan Amount"})
+    chart.set_title({"name": "Loans Chart Analysis"})
     chart.set_style(30)
 
     # Inserting the charts into the chart sheet

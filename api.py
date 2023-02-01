@@ -19,6 +19,7 @@ from demo.models import Loan, Country, Sector, Currency
 class GetEibLoans:
     def __init__(self):
 
+
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--window-size=1920,1080")
@@ -45,29 +46,29 @@ class GetEibLoans:
             table_values = self.driver.find_elements(By.XPATH, '//div/article')
             loaded_data = self.table_loans(table_values)
             self.driver.quit()
-            self.store_data(loaded_data)
+            # self.store_data(loaded_data)
         return self.tableValues
 
-    def store_data(self, tableValues):
-        data_objs = []
-        for data in tableValues:
-            """Store Data to Database if it does not exist"""
-            currency, _ = Currency.objects.get_or_create(symbol=data["currency"])
-            sector, _ = Sector.objects.get_or_create(name=data["sector"])
-            country, _ = Country.objects.get_or_create(name=data["country"])
+    # def store_data(self, tableValues):
+    #     data_objs = []
+    #     for data in tableValues:
+    #         """Store Data to Database if it does not exist"""
+    #         currency, _ = Currency.objects.get_or_create(symbol=data["currency"])
+    #         sector, _ = Sector.objects.get_or_create(name=data["sector"])
+    #         country, _ = Country.objects.get_or_create(name=data["country"])
 
-            data_objs.append(
-                Loan(
-                    title=data["title"],
-                    signature_date=data["signature_date"],
-                    signed_amount=data["signed_amount"],
-                    sector=sector,
-                    country=country,
-                    currency=currency,
-                )
-            )
+    #         data_objs.append(
+    #             Loan(
+    #                 title=data["title"],
+    #                 signature_date=data["signature_date"],
+    #                 signed_amount=data["signed_amount"],
+    #                 sector=sector,
+    #                 country=country,
+    #                 currency=currency,
+    #             )
+    #         )
 
-        Loan.objects.bulk_create(data_objs)
+    #     Loan.objects.bulk_create(data_objs)
 
     def table_loans(self, table_values):
         try:
