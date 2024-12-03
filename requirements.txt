@@ -54,6 +54,6 @@ virtualenv==20.16.5
 wrapt==1.14.1
 wsproto==1.2.0
 XlsxWriter==3.0.7
-zipp==3.9.0
+zipp==3.19.1
 zope.interface==5.5.2
 webdriver_manager
