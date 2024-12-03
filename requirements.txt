@@ -57,3 +57,4 @@ XlsxWriter==3.0.7
 zipp==3.9.0
 zope.interface==5.5.2
 webdriver_manager
+setuptools>=70.0.0 # not directly required, pinned by Snyk to avoid a vulnerability
