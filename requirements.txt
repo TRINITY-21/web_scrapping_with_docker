@@ -11,7 +11,7 @@ charset-normalizer==2.1.1
 constantly==15.1.0
 Deprecated==1.2.13
 distlib==0.3.6
-Django==3.2.16
+Django==4.2.14
 djangorestframework==3.14.0
 exceptiongroup==1.1.0
 filelock==3.8.0
