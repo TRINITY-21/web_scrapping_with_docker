@@ -17,7 +17,7 @@ exceptiongroup==1.1.0
 filelock==3.8.0
 h11==0.14.0
 hyperlink==21.0.0
-idna==3.4
+idna==3.7
 importlib-metadata==5.0.0
 incremental==22.10.0
 lxml==4.9.2
