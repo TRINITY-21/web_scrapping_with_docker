@@ -57,3 +57,5 @@ XlsxWriter==3.0.7
 zipp==3.9.0
 zope.interface==5.5.2
 webdriver_manager
+cryptography>=41.0.4 # not directly required, pinned by Snyk to avoid a vulnerability
+reportlab>=3.6.13 # not directly required, pinned by Snyk to avoid a vulnerability
